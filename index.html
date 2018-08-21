@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel = "stylesheet" href = "index.css">
+		<title>My first Vue app</title>
+  		<script src="https://unpkg.com/vue"></script>
+  		    <!-- Bootstrap -->
+    	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="/assets/css/app.css" rel="stylesheet">
+	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    	<script src="/assets/js/jquery-2.1.0.min.js"></script>
+	</head>
+	<body>
+  		<div id="app">
+    		{{ message }}
+  		</div>
+
+  		<div id = "app-2">
+  			<span v-bind:title="message">
+  				Наведи на меня курсор
+  			</span>
+  		</div>
+
+  		<div id="app-3">
+  			<span v-if="seen">Сейчас меня видно</span>
+		</div>
+
+		<div id="app-4">
+  			<ol>
+    			<li v-for="todo in todos">
+      				{{ todo.text }}
+    			</li>
+  			</ol>
+		</div>
+
+		<div id="app-5">
+  			<p>{{ message }}</p>
+  			<button v-on:click="reverseMessage">Перевернуть сообщение</button>
+		</div>
+  		
+  		<div id="app-6">
+  			<p>{{ message }}</p>
+  			<input v-model="message">
+		</div>
+
+		<div id="app-7">
+			<ol>
+    			<todo-item
+      				v-for="item in groceryList"
+      				v-bind:todo="item"
+      				v-bind:key="item.id">
+    			</todo-item>
+  			</ol>
+		</div>
+
+  		<script src = "index.js"></script>
+  		<script src="/assets/js/bootstrap.min.js"></script>
+
+	</body>
+</html>
